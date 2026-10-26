@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0b0b0b;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+}
+
+h1 {
+    font-size: 4rem;
+    color: #ffffff;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 
+        0 0 5px #ff0033,
+        0 0 10px #ff0033,
+        0 0 20px #ff0033,
+        0 0 40px #ff0000;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+h1:hover {
+    transform: scale(1.05);
+    text-shadow: 
+        0 0 8px #ff3366,
+        0 0 15px #ff3366,
+        0 0 30px #ff0033,
+        0 0 60px #ff0000,
+        0 0 90px #ff0000;
+}
+
+/* Estilos para as partículas de estrelinhas e brilho geradas via JS */
+.particle {
+    position: absolute;
+    pointer-events: none;
+    background: radial-gradient(circle, #fff 0%, #ff1a40 60%, transparent 100%);
+    border-radius: 50%;
+    animation: fallAndFade 0.8s ease-out forwards;
+}
+
+@keyframes fallAndFade {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+        box-shadow: 0 0 8px #ff1a40, 0 0 15px #ff0000;
+    }
+    100% {
+        transform: translate(var(--dx), var(--dy)) scale(0.2);
+        opacity: 0;
+    }
+}
